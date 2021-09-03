@@ -19,7 +19,8 @@
 import torch
 
 import numpy as np
-import resampy
+#import resampy
+import samplerate
 
 from . import mel_features
 from . import vggish_params
@@ -50,7 +51,8 @@ def waveform_to_examples(data, sample_rate, return_tensor=True):
         data = np.mean(data, axis=1)
     # Resample to the rate assumed by VGGish.
     if sample_rate != vggish_params.SAMPLE_RATE:
-        data = resampy.resample(data, sample_rate, vggish_params.SAMPLE_RATE)
+        #data = resampy.resample(data, sample_rate, vggish_params.SAMPLE_RATE)
+        data = samplerate.resample(data, float(vggish_params.SAMPLE_RATE/sample_rate))
 
     # Compute log mel spectrogram features.
     log_mel = mel_features.log_mel_spectrogram(
