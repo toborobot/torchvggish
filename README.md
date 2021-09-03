@@ -9,7 +9,7 @@ changes from original - instead of resampy this fork used samplerate to resample
 ```python
 import torch
 
-model = torch.hub.load('harritaylor/torchvggish', 'vggish')
+model = torch.hub.load('toborobot/torchvggish', 'vggish')
 model.eval()
 
 # Download an example audio file
