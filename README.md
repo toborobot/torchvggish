@@ -1,6 +1,7 @@
 # VGGish
 A `torch`-compatible port of [VGGish](https://github.com/tensorflow/models/tree/master/research/audioset)<sup>[1]</sup>, 
 a feature embedding frontend for audio classification models. The weights are ported directly from the tensorflow model, so embeddings created using `torchvggish` will be identical.
+changes from original - instead of resampy this fork used samplerate to resample audio file for use on embedded devices like RPI 4B
 
 
 ## Usage
